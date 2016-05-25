@@ -23,24 +23,25 @@ public class TinyWeatherOpenHelper extends SQLiteOpenHelper{
 			+ "city_code text"
 			+ "province_id integer)";
 	/**
-	 * Country建表语句
+	 * County建表语句
 	 */
-	public static final String CREATE_COUNTRY = "create table Country("
+	public static final String CREATE_COUNTY = "create table County("
 			+ "id integer primary key autoincrement,"
-			+ "country_name text,"
-			+ "country_code text"
+			+ "county_name text,"
+			+ "county_code text"
 			+ "city_id integer)";
 	
 	public TinyWeatherOpenHelper(Context context, String name, CursorFactory factory, int version) {
 		super(context, name, factory, version);
 		// TODO 自动生成的构造函数存根
 	}
+	
 	@Override
 	public void onCreate(SQLiteDatabase db){
 		//创建表
 		db.execSQL(CREATE_PROVINCE);
 		db.execSQL(CREATE_CITY);
-		db.execSQL(CREATE_COUNTRY);
+		db.execSQL(CREATE_COUNTY);
 	}
 	
 	@Override

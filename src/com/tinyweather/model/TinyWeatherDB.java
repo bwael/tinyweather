@@ -35,9 +35,9 @@ public class TinyWeatherDB {
 	/**
 	 * 获取TinyWeatherDB实例
 	 */
-	public synchronized static TinyWeatherDB getInstance(Context cintext){
+	public synchronized static TinyWeatherDB getInstance(Context context){
 		if(tinyWeatherDB == null){
-			tinyWeatherDB = new TinyWeatherDB(cintext);
+			tinyWeatherDB = new TinyWeatherDB(context);
 		}
 		return tinyWeatherDB;
 	}
@@ -49,7 +49,7 @@ public class TinyWeatherDB {
 		if(province != null){
 			ContentValues values = new ContentValues();
 			values.put("province_name", province.getProvinceName());
-			values.put("province_values", province.getProvinceCode());
+			values.put("province_code", province.getProvinceCode());
 			db.insert("Province", null, values);
 		}
 	}
@@ -80,7 +80,7 @@ public class TinyWeatherDB {
 		if(city != null){
 			ContentValues values = new ContentValues();
 			values.put("city_name", city.getCityName());
-			values.put("city_values", city.getCityCode());
+			values.put("city_code", city.getCityCode());
 			values.put("province_id", city.getProvinceId());
 			db.insert("City", null, values);
 		}
@@ -107,13 +107,13 @@ public class TinyWeatherDB {
 		return list;
 	}
 	/**
-	 * 将Country实例存储到数据库
+	 * 将County实例存储到数据库
 	 */
-	public void saveCountry(County county){
+	public void saveCounty(County county){
 		if(county != null){
 			ContentValues values = new ContentValues();
 			values.put("county_name", county.getCountyName());
-			values.put("county_values", county.getCountyCode());
+			values.put("county_code", county.getCountyCode());
 			values.put("city_id", county.getCityId());
 			db.insert("County", null, values);
 		}
