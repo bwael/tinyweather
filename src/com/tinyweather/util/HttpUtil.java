@@ -7,12 +7,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class HttpUtil {
-	public interface HttpCallbackListener{
-		void onFinish(String response);
-		
-		void onError(Exception e);
-	}
-	
 	public static void sendHttpRequest(final String address,
 			final HttpCallbackListener listener){
 		new Thread(new Runnable(){
@@ -20,7 +14,7 @@ public class HttpUtil {
 			public void run(){
 				HttpURLConnection connection = null;
 				try{
-					//TO DO
+					
 					URL url = new URL(address);
 					connection = (HttpURLConnection)url.openConnection();
 					connection.setRequestMethod("GET");

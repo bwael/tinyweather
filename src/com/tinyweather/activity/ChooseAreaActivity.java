@@ -9,7 +9,7 @@ import com.tinyweather.model.County;
 import com.tinyweather.model.Province;
 import com.tinyweather.model.TinyWeatherDB;
 import com.tinyweather.util.HttpUtil;
-import com.tinyweather.util.HttpUtil.HttpCallbackListener;
+import com.tinyweather.util.HttpCallbackListener;
 import com.tinyweather.util.Utility;
 
 import android.app.Activity;
